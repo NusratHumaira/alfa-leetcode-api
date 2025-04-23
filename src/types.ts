@@ -85,6 +85,10 @@ export type TransformedUserDataRequest = Request<
   {},
   { username: string; limit: number }
 >;
+export type TransformedProblemNameWithUserDataRequest = Request<
+
+  { username: string; problemName: string }
+>;
 
 //  ProblemData
 export interface ProblemSetQuestionListData {
@@ -118,6 +122,10 @@ interface Question {
   title: string;
   titleSlug: string;
   topicTags: string[];
+}
+export interface ProblemStatusOptions {
+  username: string;
+  problemName: string;
 }
 
 export interface DailyProblemData {

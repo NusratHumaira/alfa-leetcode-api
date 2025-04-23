@@ -272,5 +272,6 @@ app.get('/:username/contest/history', leetcode.userContestHistory);
 app.get('/:username/submission', leetcode.submission);
 app.get('/:username/acSubmission', leetcode.acSubmission);
 app.get('/:username/calendar', leetcode.calendar);
+app.get('/:username/problemStatus', leetcode.problemStatus);
 
 export default app;

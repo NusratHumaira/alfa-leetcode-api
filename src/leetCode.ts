@@ -3,6 +3,7 @@ import * as gqlQueries from './GQLQueries';
 import * as formatUtils from './FormatUtils';
 import * as controllers from './Controllers';
 import { TransformedUserDataRequest } from './types';
+import { TransformedProblemNameWithUserDataRequest } from './types';
 
 export const userData = (req: TransformedUserDataRequest, res: Response) => {
   controllers.fetchUserDetails(
@@ -75,6 +76,21 @@ export const acSubmission = (
     gqlQueries.AcSubmissionQuery
   );
 };
+export const problemStatus = (
+  req: TransformedProblemNameWithUserDataRequest,
+  res: Response
+) => {
+// console.log('Request params:', req.params);
+// console.log('Request query:', req.query);
+
+controllers.fetchProblemStatus(
+  { username: req.query.username as string,
+    problemName: req.query.problemName as string,},
+  res,
+  gqlQueries.AcSubmissionQuery
+);
+};
+
 
 export const calendar = (req: TransformedUserDataRequest, res: Response) => {
   controllers.fetchUserDetails(

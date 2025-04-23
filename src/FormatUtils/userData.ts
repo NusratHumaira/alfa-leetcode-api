@@ -64,3 +64,6 @@ export const formatAcSubmissionData = (data: UserData) => ({
 export const formatSubmissionCalendarData = (data: UserData) => ({
   submissionCalendar: data.matchedUser.submissionCalendar,
 });
+export const formatProblemStatus = (data: { solved: boolean }) => ({
+  isSolved: data.solved,
+});
