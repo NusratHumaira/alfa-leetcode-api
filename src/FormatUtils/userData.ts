@@ -1,4 +1,6 @@
 import { UserData } from '../types';
+//import fetch from 'node-fetch';
+import { parse } from 'papaparse';
 
 export const formatUserData = (data: UserData) => ({
   username: data.matchedUser.username,
@@ -67,3 +69,25 @@ export const formatSubmissionCalendarData = (data: UserData) => ({
 export const formatProblemStatus = (data: { solved: boolean }) => ({
   isSolved: data.solved,
 });
+
+
+export const fetchUsernamesFromSheet = async (sheetUrl: string): Promise<string[]> => {
+  try {
+   
+    const response = await fetch(sheetUrl);
+    const csvText = await response.text(); // Get raw CSV data
+    
+
+    const parsedData = parse(csvText, {
+      header: true, 
+      skipEmptyLines: true, 
+    });
+
+    const usernames = parsedData.data.map((row: any) => row.username).filter(Boolean);
+
+    return usernames;
+  } catch (error) {
+    console.error('Error fetching or parsing CSV data:', error);
+    throw error;
+  }
+};

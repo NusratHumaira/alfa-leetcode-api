@@ -9,3 +9,4 @@ export { default as selectProblemQuery } from './selectProblem';
 export { default as submissionQuery } from './recentSubmit';
 export { default as trendingDiscussQuery } from './trendingDiscuss';
 export { default as languageStatsQuery } from './languageStats';
+export { default as allAcSubmit } from './allAcSubmit';

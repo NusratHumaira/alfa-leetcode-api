@@ -17,6 +17,7 @@ import {
   dailyQeustion,
 } from './GQLQueries/newQueries';
 
+
 const app = express();
 let cache = apicache.middleware;
 const API_URL = process.env.LEETCODE_API_URL || 'https://leetcode.com/graphql';
@@ -273,5 +274,8 @@ app.get('/:username/submission', leetcode.submission);
 app.get('/:username/acSubmission', leetcode.acSubmission);
 app.get('/:username/calendar', leetcode.calendar);
 app.get('/:username/problemStatus', leetcode.problemStatus);
+
+app.get('/problemStatus/fromSheet', leetcode.problemStatusFromSheet);
+
 
 export default app;

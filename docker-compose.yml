@@ -6,7 +6,7 @@ services:
     container_name: alfa-leetcode-api-docker
     ports:
       - '3000:3000'
-    restart: always
+    restart: no
     environment:
       - WDS_SOCKET_HOST=127.0.0.1 
       - CHOKIDAR_USEPOLLING=true

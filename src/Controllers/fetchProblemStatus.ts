@@ -31,11 +31,11 @@ const fetchProblemStatus = async (
     }
 
     const recentSubmissions = result.data?.recentAcSubmissionList || [];
-    //console.log('Recent Submissions:', JSON.stringify(recentSubmissions, null, 2));
+    
     const solved = recentSubmissions.some(
       (submission: any) =>
-        submission?.title &&
-        submission.title.toLowerCase() === options.problemName.toLowerCase()
+        submission?.titleSlug &&
+        submission.titleSlug.toLowerCase() === options.problemName.toLowerCase()
     );
 
     return res.json({ solved });

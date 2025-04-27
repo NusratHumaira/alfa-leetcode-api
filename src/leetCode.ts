@@ -5,6 +5,7 @@ import * as controllers from './Controllers';
 import { TransformedUserDataRequest } from './types';
 import { TransformedProblemNameWithUserDataRequest } from './types';
 
+
 export const userData = (req: TransformedUserDataRequest, res: Response) => {
   controllers.fetchUserDetails(
     req.body,
@@ -90,7 +91,12 @@ controllers.fetchProblemStatus(
   gqlQueries.AcSubmissionQuery
 );
 };
-
+export const problemStatusFromSheet = (
+  _req: Request,
+  res: Response
+) => {
+  controllers.fetchProblemStatusFromSheet(_req, res, gqlQueries.AcSubmissionQuery);
+};
 
 export const calendar = (req: TransformedUserDataRequest, res: Response) => {
   controllers.fetchUserDetails(
