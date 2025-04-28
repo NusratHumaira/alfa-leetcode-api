@@ -17,7 +17,7 @@ export const fetchProblemStatusFromSheet = async (
 
   try {
     const usernames = await fetchUsernamesFromSheet(SHEET_URL);
-    console.log('Fetching user names:', usernames);
+    //console.log('Fetching user names:', usernames);
     const results: { username: string; solved: boolean }[] = [];
 
     for (const username of usernames) {

@@ -19,7 +19,7 @@ const fetchProblemStatus = async (
         query: query,
         variables: {
           username: options.username,
-          limit: 50, 
+          limit: 100, 
         },
       }),
     });

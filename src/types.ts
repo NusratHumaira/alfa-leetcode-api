@@ -159,3 +159,11 @@ export interface TrendingDiscussionObject {
     }[];
   };
 }
+export interface LeetCodeResponse {
+  data?: {
+    recentAcSubmissionList?: {
+      titleSlug?: string;
+    }[];
+  };
+  errors?: any[];
+}

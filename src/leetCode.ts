@@ -97,7 +97,12 @@ export const problemStatusFromSheet = (
 ) => {
   controllers.fetchProblemStatusFromSheet(_req, res, gqlQueries.AcSubmissionQuery);
 };
-
+export const ProblemStatusAndGenerateCSV = (
+  _req: Request,
+  res: Response
+) => {
+  controllers.fetchProblemStatusAndGenerateCSV(_req, res, gqlQueries.AcSubmissionQuery);
+};
 export const calendar = (req: TransformedUserDataRequest, res: Response) => {
   controllers.fetchUserDetails(
     req.body,

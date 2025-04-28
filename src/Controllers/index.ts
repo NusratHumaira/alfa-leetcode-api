@@ -5,3 +5,4 @@ export { default as fetchTrendingTopics } from './fetchDiscussion';
 export { default as fetchDataRawFormat } from './fetchDataRawFormat';
 export { default as fetchProblemStatus } from './fetchProblemStatus';
 export { default as fetchProblemStatusFromSheet } from './fetchProblemStatusFromSheet';
+export { default as fetchProblemStatusAndGenerateCSV } from './fetchProblemStatusAndGenerateCSV';
